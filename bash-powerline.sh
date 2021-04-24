@@ -139,7 +139,9 @@ __powerline() {
     }
 
     # Names iTerm2 tab
-    PROMPT_COMMAND=ps1
+    # Modified for MacOS Terminal compatibility per:
+    # https://apple.stackexchange.com/a/128999
+    PROMPT_COMMAND="ps1; $PROMPT_COMMAND"
 }
 
 __powerline
