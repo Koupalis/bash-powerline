@@ -92,6 +92,10 @@ __powerline() {
     readonly BOLD="\[$(tput bold)\]"
 
     __git_info() {
+        # CHANGE BY JCK: Git prompt is disabled for performance. Remove this
+        # early return to re-enable it.
+        return
+
         [ -x "$(which git)" ] || return    # git not found
 
         local git_eng="env LANG=C git"   # force git output in English to make our work easier
